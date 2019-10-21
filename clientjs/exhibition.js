@@ -54,7 +54,7 @@ $(document).ready(function(){
     if (e.which == 13) { //enter
       let chosenName = $("#namePick").val();
 
-      let socket = new WebSocket(`ws://floating-earth-37489.herokuapp.com/?name=${chosenName}`);
+      let socket = new WebSocket(`wss://floating-earth-37489.herokuapp.com/?name=${chosenName}`);
 
       // message received - show the message in div#messages
       socket.onmessage = function(event) {
