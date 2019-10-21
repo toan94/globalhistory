@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/clientjs/exhibition.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/exhibition.css" />
+
+    <title>Global History</title>
+  </head>
+  <body>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div class="wrapper">
+  <%- include('nav') %>
+
+<div class="container-fluid leftside">
+  <div class="row" >
+
+    <div class="col-sm-9 middle">
+
+      <div class="jumbotron jumbotron-fluid topic bg-secondary">
+        <div class="row text-center" >
+          <div class="col-sm-6">
+            <div class="container">
+              <h1 class="display-4"><%= data.title1 %></h1>
+              <p class="lead"><%= data.title2 %></p>
+            </div>
+          </div>
+          <div class="col-sm-6" >
+            <img style="width: 70%;" src=<%= data.coverImg %> />
+          </div>
+        </div>
+      </div>
+
+        <div class="accordion" style="margin-bottom: 50px;" id="accordionExample">
+          <div class="card">
+            <div style="margin-bottom: 10px;" class="card-header position-relative bg-dark text-center" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-outline-light stretched-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Facts
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-columns">
+
+                <% data.facts.forEach( (fact)=> { %>
+                  <% if(Object.keys(fact).length)  {%>
+                    <div class="card">
+                      <img src=<%= fact.imageSrc %> class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= fact.title %></h5>
+                        <p class="card-text"><%= fact.desc %></p>
+                        <p class="card-text"><a href=<%= `itemPost/${fact.id}` %>>Read more</a></p>
+                      </div>
+                    </div>
+                  <%}%>
+                <%  }); %>
+
+
+              </div>
+            </div>
+        </div>
+
+        <div class="card">
+          <div style="margin-bottom: 10px;" class="card-header position-relative bg-dark text-center" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-outline-light stretched-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+                Relics
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-columns">
+
+              <% data.relics.forEach( (relic)=> { %>
+                <% if(Object.keys(relic).length)  {%>
+                  <div class="card">
+                    <img src=<%= relic.imageSrc %> class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= relic.title %></h5>
+                      <p class="card-text"><%= relic.desc %></p>
+                      <p class="card-text"><a href=<%= `itemPost/${relic.id}` %>>Read more</a></p>
+                    </div>
+                  </div>
+                <%}%>
+              <%  }); %>
+
+            </div>
+          </div>
+      </div>
+
+      <div class="card">
+        <div style="margin-bottom: 10px;" class="card-header position-relative bg-dark text-center" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-outline-light stretched-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+              People
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-columns">
+
+            <% data.people.forEach( (person)=> { %>
+              <% if(Object.keys(person).length)  {%>
+                <div class="card">
+                  <img src=<%= person.imageSrc %> class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= person.title %></h5>
+                    <p class="card-text"><%= person.desc %></p>
+                    <p class="card-text"><a href=<%= `itemPost/${person.id}` %>>Read more</a></p>
+                  </div>
+                </div>
+              <%}%>
+            <%  }); %>
+
+          </div>
+        </div>
+    </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-3 right" >
+      <div id="chatlog" class="frame border">
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <br/>
+    <input type="text" id="namePick" class="form-control form-control-sm" maxlength="15" placeholder="Choose a name first!"/>
+    <form class="chat-input">
+      <div class="form-group">
+        <textarea class="form-control" id="chatInput" rows="3" maxlength="50" placeholder="Say something..." disabled></textarea>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<%- include('foot') %>
+
+
+  </body>
+
+</html>

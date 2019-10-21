@@ -1,0 +1,26 @@
+{
+  "name": "fpt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverjs/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node serverjs/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql": "^2.17.1",
+    "ws": "^7.1.2"
+  },
+  "engines": {
+    "node": "8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+    <script src="clientjs/adminEditor.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css" />
+    <title>Global History</title>
+  </head>
+  <body>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div class="wrapper">
+  <%- include('nav') %>
+
+<div class="container-fluid leftside">
+  <div class="row" >
+
+    <div class="col-sm-1 left" >
+    </div>
+
+    <div class="col-sm-8 middle">
+
+
+
+
+      <form name="itemPost">
+            <input class="form-control form-control-lg" id="title" type="text" placeholder="Title" >
+            <br/>
+            <input class="form-control form-control-lg" id="imageSrc" type="text" placeholder="Cover Image HyperLink" >
+            <br/>
+            <input class="form-control form-control-lg" id="desc" type="text" placeholder="Short Description" >
+            <br/>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio1" name="category" value="facts" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio1">Facts</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" name="category" value="relics" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio2">Relics</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio3" name="category" value="people" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio3">People</label>
+            </div>
+            <br/>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                Your content here.
+            </textarea>
+            <br/>
+            <div id="alert" class="alert alert-danger d-none" role="alert">
+              Please fill all the inputs
+            </div>
+            <button type="button" class="btn btn-outline-secondary" id="submitItem">Submit</button>
+
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
+
+      </form>
+
+
+
+
+
+    </div>
+    <div class="col-sm-2 right" >
+      <%- include('right_content') %>
+      <br/>
+      <div id="buttonContainer"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<%- include('foot') %>
+
+
+  </body>
+</html>

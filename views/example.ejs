@@ -1,0 +1,15 @@
+<html>
+<head>
+  <script src="/clientjs/blogs.js"></script>
+
+</head>
+  <body>
+    <%- include('body', {data: 1111}); %>
+    <div>
+
+      <% users.forEach( (user)=> { %>
+        <h1><%= user.name %></h1>
+      <%  }); %>
+    </div>
+  </body>
+</html>

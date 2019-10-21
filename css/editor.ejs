@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>A Simple Page with CKEditor</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+    <script src="/clientjs/editor.js" ></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css" />
+
+  </head>
+  <body>
+<div class="wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="https://www.seekpng.com/png/detail/261-2618719_museum-building-vector-museum-building-logo.png" width="50" height="30" class="d-inline-block align-top" alt="">
+        Global History
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blogs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Exhibition</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Myths</a>
+          <a class="dropdown-item" href="#">Relics</a>
+          <a class="dropdown-item" href="#">People</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Write Your Own Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+    </ul>
+
+    <form class="form-inline">
+   <input class="form-control mr-sm-2" type="search" placeholder="UserName" aria-label="Search">
+   <input class="form-control mr-sm-2" type="search" placeholder="PassWord" aria-label="Search">
+   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+ </form>
+  </div>
+</nav>
+
+<div class="container-fluid leftside">
+  <div class="row" >
+    <div class="col-sm-2 left" >
+
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header bg-dark" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-dark w-100" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Historical Myths
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-dark" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-dark w-100 collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Relics
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-dark" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-dark w-100 collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          People
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    <div class="col-sm-8 middle">
+
+
+      <form>
+            <input class="form-control form-control-lg" id="title" type="text" placeholder="Title">
+            <br/>
+
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                Your content here.
+            </textarea>
+            <br/>
+            <button type="button" class="btn btn-outline-secondary" id="submitBlog">Submit</button>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
+
+        </form>
+
+
+
+
+
+
+    </div>
+    <div class="col-sm-2 right" >
+      <div class=" bg-dark text-center" style="padding: 100px 0;">
+        <a class="text-light lock" href="#" >
+          <p>Exhibition</p>
+          <p>Is</p>
+          <p>Opening</p>
+          <img src="https://www.seekpng.com/png/detail/261-2618719_museum-building-vector-museum-building-logo.png" width=100 height=60 />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</div>
+<footer>
+
+<p class="bg-dark text-white-50 text-center">Global History - History of Everything</p>
+
+</footer>
+
+
+  </body>
+</html>
