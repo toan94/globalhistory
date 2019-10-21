@@ -5,13 +5,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 app.set('view engine', 'ejs');
 
-const port = 3000
+//const port = 3000
 var mysql = require('mysql');
 
 let con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "GHistory"
+  host: "remotemysql.com",
+  user: "78KlqwLrcP",
+  database: "78KlqwLrcP",
+  password: "eFXKcEJOOb",
 });
 con.connect();
 ////////////////////////////////////////////////////////////////////////////////
