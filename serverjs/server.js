@@ -83,6 +83,7 @@ app.get('/itemPost/:itemid', (req, res) => {
     if (err) throw err;
     //console.log(result);
     if (result.length == 0) res.status(404).render('404', {exhibitionOpened: exhibitionOpened, loggedin: req.session.loggedin});
+    result[0].author = 'Admin';
     res.render('blogPost', {exhibitionOpened: exhibitionOpened, blog: result[0], loggedin: req.session.loggedin});
   });
 });
