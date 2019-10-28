@@ -40,7 +40,7 @@ app.get('/blogs', (req, res) => {
 app.get('/blogs/:currentPage', (req, res) => {
   function blogsQuery(total) {
     let offset = (req.params.currentPage - 1) * 4;
-    let sql = `select * from blogList where status = 'approved' limit 4 offset ${offset}`;
+    let sql = `select * from blogList where status = 'approved' order by id desc limit 4 offset ${offset}`;
     con.query(sql, function(err, result, fields){
       if (err) throw err;
         res.render('blogs', {
