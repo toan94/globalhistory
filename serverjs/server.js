@@ -41,7 +41,6 @@ app.get('/blogs/:currentPage', (req, res) => {
   function blogsQuery(total) {
     let offset = (req.params.currentPage - 1) * 4;
     let sql = `select * from blogList where status = 'approved' limit 4 offset ${offset}`;
-    con.connect();
     con.query(sql, function(err, result, fields){
       if (err) throw err;
         res.render('blogs', {
@@ -52,7 +51,6 @@ app.get('/blogs/:currentPage', (req, res) => {
           loggedin: req.session.loggedin,
           exhibitionOpened: exhibitionOpened
         });
-        con.end();
     });
   }
   if (req.params.currentPage < 1) res.status(404).render('404', {exhibitionOpened: exhibitionOpened, loggedin: req.session.loggedin});
