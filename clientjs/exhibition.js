@@ -59,7 +59,7 @@ $(document).ready(function(){
       // message received - show the message in div#messages
       socket.onmessage = function(event) {
         let message = JSON.parse(event.data);
-        console.log(message);
+        console.log('gitgit');
         if (message.content) { console.log('update');
           let newChat = generateChatDiv(message);
           $("#chatlog").append(newChat);
