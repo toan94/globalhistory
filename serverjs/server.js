@@ -421,7 +421,7 @@ function onSocketConnect(ws, req) {
   let chosenName = queryData.name.toLowerCase();
   if (req.session.chosenName === chosenName) {}
   else if (globalSocketClientNameSet.has(chosenName)) {
-    terminationMessage = JSON.stringify({terminated: true, mess: `${req.session.chosenName} Taken!`})
+    terminationMessage = JSON.stringify({terminated: true, mess: 'Name Taken!'})
     ws.send(terminationMessage, {}, ()=>{
       ws.terminate();
     });
