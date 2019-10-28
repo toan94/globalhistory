@@ -419,7 +419,6 @@ function onSocketConnect(ws, req) {
   ////console.log(req.url);
   let queryData = url.parse(req.url, true).query;
   let chosenName = queryData.name.toLowerCase();
-  if (req.session.chosenName === chosenName) {}
   else if (globalSocketClientNameSet.has(chosenName)) {
     terminationMessage = JSON.stringify({terminated: true, mess: 'Name Taken!'})
     ws.send(terminationMessage, {}, ()=>{
@@ -428,7 +427,6 @@ function onSocketConnect(ws, req) {
   }
   else {
     ws.username = chosenName;
-    req.session.chosenName = chosenName;
     globalSocketClientNameSet.add(ws.username);
     okMessage = JSON.stringify({terminated: false, mess: 'Name is good!'});
     ws.send(okMessage);
