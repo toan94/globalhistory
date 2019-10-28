@@ -367,7 +367,7 @@ app.get('/getBlog', (req, res) => {
   if (!req.session.loggedin)
     res.status(404).render('404', {exhibitionOpened: exhibitionOpened, loggedin: req.session.loggedin});
   else {
-    let sql = `select * from blogList where status = "waiting" limit 1`;
+    let sql = `select * from blogList where status = "waiting" order by id asc limit 1`;
     con.query(sql, function(err, result, fields){
       if (err) throw err;
       let blog = result.length == 0 ? {over: true} : result[0];
