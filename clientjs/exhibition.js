@@ -50,44 +50,6 @@ function generateChatDiv(chat){
 
 $(document).ready(function(){
 
-  if (sessionStorage.chosenName) {
-    let socket = new WebSocket(`wss://global-history.herokuapp.com/?name=${sessionStorage.chosenName}`);
-    socket.onmessage = function(event) {
-      let message = JSON.parse(event.data);
-      console.log(message);
-      if (message.content) { console.log('update');
-        let newChat = generateChatDiv(message);
-        $("#chatlog").append(newChat);
-        var chatlog = document.getElementById("chatlog");
-        chatlog.scrollTop = chatlog.scrollHeight ;
-      }
-      else if(message.terminated) {
-        alert(message.mess);
-        socket.close();
-        return;
-      }
-      else if (!message.terminated) {
-        console.log('pass');
-
-
-        window.sessionStorage.chosenName = chosenName;
-        document.getElementById("chatInput").disabled = false;
-        $("#namePick").remove();
-        $('#chatInput').on('keypress', (e)=> {
-          if (e.which == 13) { //enter
-            e.preventDefault();
-            let outgoingMessage = $("#chatInput").val();
-            let outgoingData = {
-              username: sessionStorage.chosenName,
-              content: outgoingMessage
-            };
-            socket.send(JSON.stringify(outgoingData));
-            $("#chatInput").val("");
-          }
-        });
-      }
-    }
-  }
 
   $('#namePick').on('keypress', (e)=> {
     if (e.which == 13) { //enter
