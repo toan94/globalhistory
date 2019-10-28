@@ -10,7 +10,7 @@ function getBlog(){
       $('#title').val(data.title);
       $('#author').val(data.author);
       $('#desc').val(data.desc);
-      $("#blogid").text(data.id);
+      //$("#blogid").text(data.id);
       CKEDITOR.instances['editor1'].setData(data.content);
       $("#editform").removeClass('d-none');
       $("#startApprove").addClass('d-none');
