@@ -302,7 +302,7 @@ app.post('/adminLogin', (req, res) => {
   let username = req.body.username;
 	let password = req.body.password;
 	if (username && password) {
-		if (username === '1' && password === '1') {
+		if (username === '1' && password === 'zxcvbn') {
 			req.session.loggedin = true;
 			req.session.username = username;
       ////console.log('in');
